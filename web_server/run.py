@@ -5,11 +5,10 @@ app = Flask(__name__)
 import json
 import datetime as date
 
-
 from blockchain import block
 
 
-blockchain = dict()
+blockchain = []
 blockchain.append(block.create_genesis_block())
 
 # Storing the transactions

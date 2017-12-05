@@ -26,7 +26,7 @@ def create_genesis_block():
 def proof_of_work(last_proof):
   incrementor = last_proof + 1
   # Keep incrementing until it's equal to a number divisible by 7
-  #  and the proof of work of the previous block in the chain
+  #  AND the proof of work of the previous block in the chain(First time == 8)
   while not (incrementor % 7 == 0 and incrementor % last_proof == 0):
     incrementor += 1
 
