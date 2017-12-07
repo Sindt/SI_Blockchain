@@ -12,7 +12,11 @@ class Block:
 
     def hash_block(self):
         sha = hasher.sha256()
-        sha.update(' '.join(self.index, self.timestamp, self.data, self.prev_hash))
+        sha.update(str(self.index).encode('utf-8') +
+                   str(self.timestamp).encode('utf-8') +
+                   str(self.data).encode('utf-8') +
+                   str(self.prev_hash).encode('utf-8'))
+                   #.join(self.timestamp).join(self.data).join(self.prev_hash))
         return sha.hexdigest()
 
 

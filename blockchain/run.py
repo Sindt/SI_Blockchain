@@ -7,20 +7,17 @@ import datetime as date
 
 from blockchain import block
 
-
 blockchain = []
 blockchain.append(block.create_genesis_block())
 
 # Storing the transactions
 nodes_transactions = []
 
-
 @app.route('/transact', methods=['POST'])
 def transact():
     if request.method == 'POST':
         nodes_transactions.append(request.get_json())
         return "Transaction succes"
-
 
 
 @app.route('/mine', methods = ['POST'])
