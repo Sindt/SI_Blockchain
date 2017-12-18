@@ -23,7 +23,7 @@ def transact():
 @app.route('/mine', methods = ['POST'])
 def mine():
   # Get the last proof of work
-  last_block = blockchain[len(blockchain) - 1]
+  last_block = blockchain[-1]
   last_proof = last_block.data['proof-of-work']
 
   proof = block.proof_of_work(last_proof)
