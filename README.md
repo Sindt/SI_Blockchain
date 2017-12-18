@@ -3,9 +3,7 @@
 ### Used resources:
 
 **Blockchain:**
-1. https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
-2. http://ecomunsing.com/build-your-own-blockchain
-3. https://bitsonblocks.net/2015/09/09/a-gentle-introduction-to-blockchain-technology/
+1. https://medium.com/crypto-currently/lets-make-the-tiniest-blockchain-bigger-ac360a328f4d
 
 
 **Docker/P2P:**
