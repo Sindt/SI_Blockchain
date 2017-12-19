@@ -24,7 +24,6 @@ sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
 
 
 #### Install virtualbox:
-```python
-%%bash
+``` %%bash
 sudo apt-get install virtualbox
 ```
