@@ -8,3 +8,18 @@
 
 **Docker/P2P:**
 1. https://www.oreilly.com/learning/what-is-docker-networking
+
+
+### Docker install requirements on linux:
+
+
+#### Install docker:
+´´ Bash
+$ curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+chmod +x /tmp/docker-machine &&
+sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+´´
+
+
+#### Install virtualbox:
+sudo apt-get install virtualbox
