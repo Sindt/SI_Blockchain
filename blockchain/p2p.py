@@ -5,7 +5,6 @@ import time
 from random import randint
 
 class Server:
-    print("1")
     connections = []
     peers = []
     def __init__(self):
@@ -44,7 +43,6 @@ class Server:
             connection.send(b'\x11' + bytes(p, "utf-8"))
 
 class Client:
-    print("2")
     def sendMsg(self, sock):
         while True:
             sock.send(bytes(input(""), 'utf-8'))
