@@ -6,6 +6,12 @@
 
 This shows the parts of our system that managed to get developed successfully. we did not complete all of the assignment in time, see futher explanation under "How to run".
 
+At the moment our system consists of 2 python files in the blockchain folder:
+``` python
+block.py - Our blockchain
+
+p2p.py - Our Peer-to-Peer network
+```
 
 The application will run by default on localhost:5000
 
