@@ -61,9 +61,10 @@ Response:
 
 ### Peer-to-Peer example:
 This is an example of how our peer-to-peer network are working:
+Server is the top right window, and it was randomly selected
 ![p2p1](https://i.imgur.com/RfhHh7hr.png)
 
-After closing the server it automatically finds a new one among the nodes:
+After closing the server it automatically finds a new one among the nodes, in this case the bottom right one:
 ![p2p2](https://user-images.githubusercontent.com/11289686/34229671-7179d1d0-e5d5-11e7-8853-531586ccdd81.PNG)
 
 
