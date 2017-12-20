@@ -16,10 +16,15 @@ GET - nodes/chain
 POST - nodes/transactions/new 
 
 Transaction structure:
+
 {
+
 	"sender": "someValue",
+
 	"recipient": "someOtherValue"
+
 	"amount": someNumber
+
 }
 
 POST - nodes/register
@@ -38,10 +43,12 @@ As we had a really hard time creating our blockchain in python, we had to get he
 from various different sources on the internet:
 
 (1) https://hackernoon.com/learn-blockchains-by-building-one-117428612f46
+
 This source has been used as our go-to guide in creating the blockchain, which also means that 
 we have borrowed heavily from this guide.
 
 (2) https://github.com/davecan/easychain
+
 This source has helped guide us and understand the concept of a blockchain in python
 
 (3) https://medium.com/crypto-currently/lets-make-the-tiniest-blockchain-bigger-ac360a328f4d
