@@ -1,9 +1,12 @@
 version: '3'
 
 services:
-  web-service:
+  node1-service:
     build: ./blockchain
     volumes:
       - ./blockchain:/usr/src/app
     ports:
-      - 3000:80
+      - 8080
+      
+      
+   
