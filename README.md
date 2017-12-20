@@ -38,9 +38,12 @@ GET - nodes/resolve
 Vi havde mange udfordringer med vores peer-to-peer netværk og docker-swarm (som vi endte med at måtte droppe at bruge), dette gjorde at vi ikke fik vores system ”samlet” inden afleveringsfristen.
 
 Vi fik lavet vores blockchain og dens funktionalitet.
+
 Vi fik lavet vores P2P netværk.
+
 Vi fik konfigureret 4 docker containers, ved hjælp docker-compose, som hver især kan kører vores blockchain.
-Men vi fik IKKE lavet vores blockchain en del af vores p2p netværk, endnu. 
+
+Men vi fik IKKE lavet vores blockchain, som en del af vores p2p netværk, endnu. 
 
 Nedenfor er er beskrivelse af hvordan man kører de forskellige komponenter.
 
