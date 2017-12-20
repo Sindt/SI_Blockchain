@@ -34,10 +34,26 @@ GET - nodes/resolve
 
 
 ## How to run
+**NB!:**
+Vi havde mange udfordringer med vores peer-to-peer netværk og docker-swarm (som vi endte med at måtte droppe at bruge), dette gjorde at vi ikke fik vores system ”samlet” inden afleveringsfristen.
+
+Vi fik lavet vores blockchain og dens funktionalitet.
+Vi fik lavet vores P2P netværk.
+Vi fik konfigureret 4 docker containers, ved hjælp docker-compose, som hver især kan kører vores blockchain.
+Men vi fik IKKE lavet vores blockchain en del af vores p2p netværk, endnu. 
+
+Nedenfor er er beskrivelse af hvordan man kører de forskellige komponenter.
+
 
 Our system depends on Docker and Docker-compose. To install, run:
 ``` $$bash
 bash install.sh
+
+```
+
+To start our blockchain application run:
+``` $$bash
+bash run.sh
 
 ```
 This will run the docker-compose file, (in the root of the repository) and start up 4 containers running the block.py serivce.
