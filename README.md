@@ -61,6 +61,7 @@ Response:
 
 ### Peer-to-Peer example:
 This is an example of how our peer-to-peer network are working:
+![p2p](https://user-images.githubusercontent.com/11289686/34229671-7179d1d0-e5d5-11e7-8853-531586ccdd81.PNG)
 
 
 
