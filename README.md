@@ -95,6 +95,8 @@ This will run the docker-compose file, (in the root of the repository) and start
 Example:
 ![nodes](https://user-images.githubusercontent.com/11289686/34226638-9a4c9af8-e5ca-11e7-9898-0d51c77d6370.PNG)
 
+4 containers running:
+![containers](https://user-images.githubusercontent.com/11289686/34228634-9e405288-e5d1-11e7-8e41-33e5a45dccf3.PNG)
 
 
 ## Sources
