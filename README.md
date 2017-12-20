@@ -6,6 +6,7 @@
 
 SomeText about the current state of the application
 
+The application will run by default on localhost:5000
 
 ### Endpoints
 
@@ -18,13 +19,11 @@ POST - nodes/transactions/new
 Transaction structure:
 
 {
-
 	"sender": "someValue",
 
 	"recipient": "someOtherValue"
 
 	"amount": someNumber
-
 }
 
 POST - nodes/register
