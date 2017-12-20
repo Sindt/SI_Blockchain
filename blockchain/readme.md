@@ -44,4 +44,8 @@ we have borrowed heavily from this guide.
 (2) https://github.com/davecan/easychain
 This source has helped guide us and understand the concept of a blockchain in python
 
+(3) https://medium.com/crypto-currently/lets-make-the-tiniest-blockchain-bigger-ac360a328f4d
+
+(4) https://www.oreilly.com/learning/what-is-docker-networking
+
 
