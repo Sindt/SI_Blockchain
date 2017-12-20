@@ -70,7 +70,7 @@ Vi havde mange udfordringer med vores peer-to-peer netværk og docker-swarm (som
 
 Vi fik lavet det meste af vores blockchain og dens funktionalitet.
 
-Vi fik lavet vores P2P netværk.
+Vi fik lavet en stor del af vores P2P netværk.
 
 Vi fik konfigureret 4 docker containers, ved hjælp docker-compose, som hver især kan kører vores blockchain.
 
