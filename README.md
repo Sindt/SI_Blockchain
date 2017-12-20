@@ -40,7 +40,7 @@ Our system depends on Docker and Docker-compose. To install, run:
 bash install.sh
 
 ```
-
+This will run the docker-compose file, (in the root of the repository) and start up 4 containers running the block.py serivce.
 
 ## Sources
 As we had a really hard time creating our blockchain in python, we had to get help and inspiration
