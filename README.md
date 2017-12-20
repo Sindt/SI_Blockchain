@@ -6,7 +6,7 @@
 
 This shows the parts of our system that managed to get developed successfully. we did not complete all of the assignment in time, see futher explanation under "How to run".
 
-At the moment our system consists of 2 python files in the blockchain folder:
+At the moment our system consists of 2 python files in the /blockchain folder:
 ``` python
 block.py - Our blockchain
 
@@ -60,6 +60,7 @@ Response:
 
 
 ### Peer-to-Peer example:
+This is an example of how our peer-to-peer network are working:
 
 
 
