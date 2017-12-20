@@ -61,7 +61,10 @@ Response:
 
 ### Peer-to-Peer example:
 This is an example of how our peer-to-peer network are working:
-![p2p](https://user-images.githubusercontent.com/11289686/34229671-7179d1d0-e5d5-11e7-8853-531586ccdd81.PNG)
+![p2p1](https://i.imgur.com/RfhHh7hr.png)
+
+After closing the server it automatically finds a new one among the nodes:
+![p2p2](https://user-images.githubusercontent.com/11289686/34229671-7179d1d0-e5d5-11e7-8853-531586ccdd81.PNG)
 
 
 
@@ -121,5 +124,4 @@ This source has helped guide us and understand the concept of a blockchain in py
 
 (6) https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/
 
-
-
+(7) https://www.youtube.com/watch?v=Rvfs6Xx3Kww
