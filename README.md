@@ -36,8 +36,9 @@ GET - nodes/resolve
 ### Mining example:
 ```
 http://localhost:5000/mine
-```
 
+Response:
+```
 ![mine](https://user-images.githubusercontent.com/11289686/34226747-f785cafa-e5ca-11e7-9a35-d379d4a69d43.PNG)
 
 
