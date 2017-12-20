@@ -35,8 +35,11 @@ GET - nodes/resolve
 
 ## How to run
 
-SomeText about how to run the application (bash scripts etc.)
+Our system depends on Docker and Docker-compose. To install, run:
+``` $$bash
+bash install.sh
 
+```
 
 
 ## Sources
