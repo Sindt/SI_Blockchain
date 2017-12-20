@@ -33,7 +33,13 @@ POST - nodes/register
 
 GET - nodes/resolve
 
-#### Mining example:
+### Mining example:
+```
+http://localhost:5000/mine
+```
+
+![mine](https://user-images.githubusercontent.com/11289686/34226747-f785cafa-e5ca-11e7-9a35-d379d4a69d43.PNG)
+
 
 
 
@@ -41,7 +47,7 @@ GET - nodes/resolve
 **NB!:**
 Vi havde mange udfordringer med vores peer-to-peer netværk og docker-swarm (som vi endte med at måtte droppe at bruge), dette gjorde at vi ikke fik vores system ”samlet” inden afleveringsfristen.
 
-Vi fik lavet vores blockchain og dens funktionalitet.
+Vi fik lavet det meste af vores blockchain og dens funktionalitet.
 
 Vi fik lavet vores P2P netværk.
 
