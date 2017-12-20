@@ -4,7 +4,8 @@
 
 ## The application 
 
-SomeText about the current state of the application
+This shows the parts of our system that managed to get developed successfully. we did not complete all of the assignment in time, see futher explanation under "How to run".
+
 
 The application will run by default on localhost:5000
 
@@ -32,6 +33,9 @@ POST - nodes/register
 
 GET - nodes/resolve
 
+#### Mining example:
+
+
 
 ## How to run
 **NB!:**
@@ -45,7 +49,7 @@ Vi fik konfigureret 4 docker containers, ved hjælp docker-compose, som hver is�
 
 Men vi fik IKKE lavet vores blockchain, som en del af vores p2p netværk, endnu. 
 
-Nedenfor er er beskrivelse af hvordan man kører de forskellige komponenter.
+Nedenfor er er beskrivelse af hvordan man installere og kører de forskellige komponenter, når de rent faktisk er udviklet færdigt. Derfor er det ikke alle delene af "guiden" som pt. vil virke.
 
 **How to run:**
 Our system depends on Docker and Docker-compose. To install, run:
@@ -60,6 +64,11 @@ bash run.sh
 
 ```
 This will run the docker-compose file, (in the root of the repository) and start up 4 containers running the block.py serivce.
+
+Example:
+![nodes](https://user-images.githubusercontent.com/11289686/34226638-9a4c9af8-e5ca-11e7-9898-0d51c77d6370.PNG)
+
+
 
 ## Sources
 As we had a really hard time creating our blockchain in python, we had to get help and inspiration
