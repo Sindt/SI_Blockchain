@@ -47,7 +47,7 @@ Men vi fik IKKE lavet vores blockchain, som en del af vores p2p netværk, endnu.
 
 Nedenfor er er beskrivelse af hvordan man kører de forskellige komponenter.
 
-
+**How to run:**
 Our system depends on Docker and Docker-compose. To install, run:
 ``` $$bash
 bash install.sh
