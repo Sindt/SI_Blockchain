@@ -18,13 +18,13 @@ POST - nodes/transactions/new
 
 Transaction structure:
 
-{
+`{
 	"sender": "someValue",
 
 	"recipient": "someOtherValue"
 
 	"amount": someNumber
-}
+}`
 
 POST - nodes/register
 
