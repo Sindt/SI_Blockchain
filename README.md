@@ -113,4 +113,9 @@ This source has helped guide us and understand the concept of a blockchain in py
 
 (4) https://www.oreilly.com/learning/what-is-docker-networking
 
+(5) https://docs.docker.com/compose/compose-file/
+
+(6) https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/
+
+
 
