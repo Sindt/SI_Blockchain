@@ -47,7 +47,7 @@ Response:
 ```
 ![mine](https://user-images.githubusercontent.com/11289686/34226747-f785cafa-e5ca-11e7-9a35-d379d4a69d43.PNG)
 
-For every mining we get another block to the chain, so if we do this 3 times we get an chain of 3 blocks, see the chain example.
+For every mining, we add another block to the chain, so if we do this 3 times we get an chain of 3 blocks, see the chain example.
 
 ### Chain example:
 ```
