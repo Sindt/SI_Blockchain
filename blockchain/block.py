@@ -1,8 +1,9 @@
 import hashlib
 import json
-from time import time
+import time
 from urllib.parse import urlparse
 from uuid import uuid4
+import _thread
 
 import requests
 from flask import Flask, jsonify, request
@@ -85,7 +86,7 @@ class Blockchain:
 
         block = {
             'index': len(self.chain) + 1,
-            'timestamp': time(),
+            'timestamp': time.time(),
             'transactions': self.current_transactions,
             'proof': proof,
             'previous_hash': previous_hash or self.hash(self.chain[-1]),
@@ -137,7 +138,17 @@ class Blockchain:
 
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
-        return guess_hash[:4] == "0000"
+        return guess_hash[:5] == "00000"
+
+    def proof_of_work_fast(self, last_proof):
+        # Create a variable that we will use to find our next proof of work
+        incrementor = last_proof + 1
+        # Keep incrementing the incrementor until it's equal to a number divisible by 9
+        # and the proof of work of the previous block in the chain
+        while not (incrementor % 9 == 0 and incrementor % last_proof == 0):
+            incrementor += 1
+        # Once that number is found we can return it as a proof
+        return incrementor
 
 
 # Instantiate the Node
@@ -150,8 +161,8 @@ node_identifier = str(uuid4()).replace('-', '')
 blockchain = Blockchain()
 
 
-@app.route('/mine', methods=['GET'])
-def mine():
+@app.route('/mine/hash', methods=['GET'])
+def mine_hash():
     # We run proof of work algorithm to get the next proof
     last_block = blockchain.last_block
     last_proof = last_block['proof']
@@ -178,21 +189,34 @@ def mine():
     }
     return jsonify(response), 200
 
+@app.route('/mine/modulo', methods=['GET'])
+def mine_modulo():
+    # We run proof of work algorithm to get the next proof
+    last_block = blockchain.last_block
+    last_proof = last_block['proof']
+    proof = blockchain.proof_of_work_fast(last_proof)
 
-@app.route('/transactions/new', methods=['POST'])
-def new_transaction():
-    values = request.get_json()
+    # We must receive a reward for finding the proof.
+    # The sender is "0" to signify that this node has mined a new coin.
+    blockchain.new_transaction(
+        sender="0",
+        recipient=node_identifier,
+        amount=1,
+    )
 
-    # Check that the required fields are in the POSTED data
-    required = ['sender', 'recipient', 'amount']
-    if not all(k in values for k in required):
-        return 'Missing values', 400
+    # Forge the new Block by adding it to the chain
+    previous_hash = blockchain.hash(last_block)
+    block = blockchain.new_block(proof, previous_hash)
 
-    # Create a new Transaction
-    index = blockchain.new_transaction(values['sender'], values['recipient'], values['amount'])
+    response = {
+        'message': "New Block Forged",
+        'index': block['index'],
+        'transactions': block['transactions'],
+        'proof': block['proof'],
+        'previous_hash': block['previous_hash'],
+    }
+    return jsonify(response), 200
 
-    response = {'message': f'Transaction will be added to Block {index}'}
-    return jsonify(response), 201
 
 
 @app.route('/chain', methods=['GET'])
@@ -202,24 +226,6 @@ def full_chain():
         'length': len(blockchain.chain),
     }
     return jsonify(response), 200
-
-
-@app.route('/nodes/register', methods=['POST'])
-def register_nodes():
-    values = request.get_json()
-
-    nodes = values.get('nodes')
-    if nodes is None:
-        return "Error: Please supply a valid list of nodes", 400
-
-    for node in nodes:
-        blockchain.register_node(node)
-
-    response = {
-        'message': 'New nodes have been added',
-        'total_nodes': list(blockchain.nodes),
-    }
-    return jsonify(response), 201
 
 
 @app.route('/nodes/resolve', methods=['GET'])
@@ -239,13 +245,7 @@ def consensus():
 
     return jsonify(response), 200
 
-
-if __name__ == '__main__':
-    from argparse import ArgumentParser
-
-    parser = ArgumentParser()
-    parser.add_argument('-p', '--port', default=5000, type=int, help='port to listen on')
-    args = parser.parse_args()
-    port = args.port
-
-    app.run(host='0.0.0.0', port=port)
+def flaskThread():
+    app.run()
+if __name__ == "__main__":
+   flaskThread()
