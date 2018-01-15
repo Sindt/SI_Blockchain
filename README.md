@@ -6,7 +6,7 @@
 
 This shows the parts of our system that managed to get developed successfully. we did not complete all of the assignment in time, see futher explanation under "How to run".
 
-At the moment our system consists of 2 python files in the blockchain folder:
+At the moment our system consists of 2 python files in the /blockchain folder:
 ``` python
 block.py - Our blockchain
 
@@ -60,6 +60,12 @@ Response:
 
 
 ### Peer-to-Peer example:
+This is an example of how our peer-to-peer network are working:
+Server is the top right window, and it was randomly selected
+![p2p1](https://i.imgur.com/RfhHh7hr.png)
+
+After closing the server it automatically finds a new one among the nodes, in this case the bottom right one:
+![p2p2](https://user-images.githubusercontent.com/11289686/34229671-7179d1d0-e5d5-11e7-8853-531586ccdd81.PNG)
 
 
 
@@ -69,7 +75,7 @@ Vi havde mange udfordringer med vores peer-to-peer netværk og docker-swarm (som
 
 Vi fik lavet det meste af vores blockchain og dens funktionalitet.
 
-Vi fik lavet vores P2P netværk.
+Vi fik lavet en stor del af vores P2P netværk.
 
 Vi fik konfigureret 4 docker containers, ved hjælp docker-compose, som hver især kan kører vores blockchain.
 
@@ -94,6 +100,8 @@ This will run the docker-compose file, (in the root of the repository) and start
 Example:
 ![nodes](https://user-images.githubusercontent.com/11289686/34226638-9a4c9af8-e5ca-11e7-9898-0d51c77d6370.PNG)
 
+4 containers running:
+![containers](https://user-images.githubusercontent.com/11289686/34228634-9e405288-e5d1-11e7-8e41-33e5a45dccf3.PNG)
 
 
 ## Sources
@@ -113,4 +121,8 @@ This source has helped guide us and understand the concept of a blockchain in py
 
 (4) https://www.oreilly.com/learning/what-is-docker-networking
 
+(5) https://docs.docker.com/compose/compose-file/
 
+(6) https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/
+
+(7) https://www.youtube.com/watch?v=Rvfs6Xx3Kww
