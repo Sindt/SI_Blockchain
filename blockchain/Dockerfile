@@ -9,4 +9,6 @@ RUN apt-get install -y python python-dev python-distribute python-pip
 RUN pip install -r requirements.txt
 
 COPY . /usr/src/app
+
+EXPOSE 5000
 CMD python block.py

@@ -3,7 +3,7 @@ services:
    peer1:
       build: ./blockchain/
       ports:
-         - 10006:10006
+         - 10006:5000
       environment:
          - PEER_PORT=10006
          - PEER1=peer2:10007
@@ -12,7 +12,7 @@ services:
    peer2:
       build: ./blockchain/
       ports:
-         - 10007:10007
+         - 10007:5000
       environment:
          - PEER_PORT=10007
          - PEER1=peer1:10006
@@ -21,7 +21,7 @@ services:
    peer3:
       build: ./blockchain/
       ports:
-         - 10008:10008
+         - 10008:5000
       environment:
          - PEER_PORT=10008
          - PEER1=peer1:10006
@@ -31,7 +31,7 @@ services:
    peer4:
       build: ./blockchain/
       ports:
-         - 10009:10009
+         - 10009:5000
       environment:
          - PEER_PORT=10009
          - PEER1=peer1:10006
