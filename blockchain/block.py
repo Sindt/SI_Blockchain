@@ -1,10 +1,9 @@
 import hashlib
 import json
 import time
+import os
 from urllib.parse import urlparse
 from uuid import uuid4
-import _thread
-
 import requests
 from flask import Flask, jsonify, request
 
@@ -54,7 +53,7 @@ class Blockchain:
 
         # :return: True if our chain was replaced, False if not
 
-        neighbours = self.nodes
+        neighbours = config
         new_chain = None
 
         # We're only looking for chains longer than ours
@@ -62,23 +61,29 @@ class Blockchain:
 
         # Grab and verify the chains from all the nodes in our network
         for node in neighbours:
-            response = requests.get(f'http://{node}/chain')
+            try:
+                print(f'{node}')
+                response = requests.get(f'http://{node}/chain')
 
-            if response.status_code == 200:
-                length = response.json()['length']
-                chain = response.json()['chain']
+                if response.status_code == 200:
+                    print('200')
+                    length = response.json()['length']
+                    chain = response.json()['chain']
 
-                # Check if the length is longer and the chain is valid
-                if length > max_length and self.valid_chain(chain):
-                    max_length = length
-                    new_chain = chain
+                    # Check if the length is longer and the chain is valid
+                    if length > max_length and self.valid_chain(chain):
+                        max_length = length
+                        new_chain = chain
 
-        # Replace our chain if we discovered a new, valid chain longer than ours
-        if new_chain:
-            self.chain = new_chain
-            return True
+                    # Replace our chain if we discovered a new, valid chain longer than ours
+                if new_chain:
+                    self.chain = new_chain
+                    return True
 
-        return False
+                return False
+            except Exception as e:
+                    print('Error in node'f'{node}')
+                    print(e)
 
     def new_block(self, proof, previous_hash):
 
@@ -159,6 +164,14 @@ node_identifier = str(uuid4()).replace('-', '')
 
 # Instantiate the Blockchain
 blockchain = Blockchain()
+config = []
+try:
+    config.append(os.environ["PEER1"]+':5000')
+    config.append(os.environ["PEER2"]+':5000')
+    config.append(os.environ["PEER3"]+':5000')
+except Exception as e:
+    print('Error! Couldnt load config')
+    print(e)
 
 
 @app.route('/mine/hash', methods=['GET'])
@@ -248,4 +261,4 @@ def consensus():
 def flaskThread():
     app.run(host='0.0.0.0', port=5000)
 if __name__ == "__main__":
-   flaskThread()
+    flaskThread()

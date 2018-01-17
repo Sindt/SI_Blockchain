@@ -5,35 +5,35 @@ services:
       ports:
          - 10006:5000
       environment:
-         - PEER_PORT=10006
-         - PEER1=peer2:10007
-         - PEER2=peer3:10008
-         - PEER3=peer4:10009
+         - PYTHONUNBUFFERED=0
+         - PEER1=peer2
+         - PEER2=peer3
+         - PEER3=peer4
    peer2:
       build: ./blockchain/
       ports:
          - 10007:5000
       environment:
-         - PEER_PORT=10007
-         - PEER1=peer1:10006
-         - PEER2=peer3:10008
-         - PEER3=peer4:10009
+         - PYTHONUNBUFFERED=0
+         - PEER1=peer1
+         - PEER2=peer3
+         - PEER3=peer4
    peer3:
       build: ./blockchain/
       ports:
          - 10008:5000
       environment:
-         - PEER_PORT=10008
-         - PEER1=peer1:10006
-         - PEER2=peer2:10007
-         - PEER3=peer4:10009
+         - PYTHONUNBUFFERED=0
+         - PEER1=peer1
+         - PEER2=peer2
+         - PEER3=peer4
 
    peer4:
       build: ./blockchain/
       ports:
          - 10009:5000
       environment:
-         - PEER_PORT=10009
-         - PEER1=peer1:10006
-         - PEER2=peer2:10007
-         - PEER3=peer3:10008
+         - PYTHONUNBUFFERED=0
+         - PEER1=peer1
+         - PEER2=peer2
+         - PEER3=peer3
