@@ -26,18 +26,13 @@ Transaction structure:
 
 ```
 {
+	"amount": someNumber,
+	
 	"sender": "someValue",
 
 	"recipient": "someOtherValue"
-
-	"amount": someNumber
 }
 ```
-
-### Mining example:
-
-For every mining, we add another block to the chain, so if we do this 3 times we get an chain of 3 blocks, see the chain example.
-
 
 ## How to run
 
@@ -55,10 +50,22 @@ bash run.sh
 ```
 This will run the docker-compose file(in the root of the repository), and start up 4 containers, which uses the DockerFile to download the python:3 image, installing all the dependencies and requirements and finally running the block.py serivce.
 
-**Demo:**
-Start-up:
+**Start-up:**
+
 ![run](https://user-images.githubusercontent.com/11289686/35142540-ecd920ac-fcfe-11e7-991d-6716f66e5555.PNG)
 
+
+**Mining example:**
+Request on node 1 (:10006) 
+http://localhost:10006/mine/hash
+
+In our first mining version, we have created a proof of work algorithm that should: "Find a number that when hashed with the previous block’s solution, resulting in a hash with 4 leading 0s". The miners are then rewarded for their solution by receiving 1 coin by the network, this is stored in a transaction.
+
+![mine](https://user-images.githubusercontent.com/11289686/35143457-e80643ea-fd01-11e7-8206-67eb1106139d.PNG)
+
+
+
+For every succesfull mining, we add another block to the nodes copy og the blockchain, so if we do this 3 times we get an chain of 3 blocks, see the chain example.
 
 
 
