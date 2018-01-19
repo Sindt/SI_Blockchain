@@ -74,7 +74,7 @@ http://localhost:10006/chain
 ### Consensus example:
 As mentioned our node 1, now has a blockchain with the length of 4, but the other nodes in our network, still got a different copy of the blockchain.
 
-Request: http://localhost:10007/chain
+Request on node 2: http://localhost:10007/chain
 
 ![chain](https://user-images.githubusercontent.com/11289686/35144453-dcdc4390-fd04-11e7-8c9f-4c8d2e249620.PNG)
 
