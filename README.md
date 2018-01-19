@@ -55,7 +55,7 @@ This will run the docker-compose file(in the root of the repository), and start 
 ![run](https://user-images.githubusercontent.com/11289686/35142540-ecd920ac-fcfe-11e7-991d-6716f66e5555.PNG)
 
 
-**Mining example:**
+### Mining example:
 Request on node 1 (:10006) 
 http://localhost:10006/mine/hash
 
@@ -71,7 +71,7 @@ http://localhost:10006/chain
 ![chain-mined](https://user-images.githubusercontent.com/11289686/35144042-a7cb505c-fd03-11e7-8d43-792820cea6ac.PNG)
 
 
-**Consensus example:**
+### Consensus example:
 As mentioned our node 1, now has a blockchain with the length of 4, but the other nodes in our network, still got a different copy of the blockchain.
 
 Request: http://localhost:10007/chain
