@@ -90,12 +90,23 @@ Node 2, ask's all the other nodes in the network, for a copy of their blockchain
 ![resolved](https://user-images.githubusercontent.com/11289686/35144650-67ef89b0-fd05-11e7-8866-800aefcb547f.PNG)
 
 
+### Mining version 2 example:
+On the same way as the first mining version we will have to increment a number. When that number is divisible by 9, and the proof number of the last block, a new block is mined, and a new coin is rewarded in a transaction: 
+
+**Mining on node 2**
+
+Request: http://localhost:10007/mine/modulo
+
+![mine2](https://user-images.githubusercontent.com/11289686/35145159-22de5c28-fd07-11e7-837a-d5967dc9e954.PNG)
 
 
+To make sure, node 2 still got the longest valid chain we make another resovle request:
 
+Request: http://localhost:10007/nodes/resolve
 
+![resolved2](https://user-images.githubusercontent.com/11289686/35145280-8686ea24-fd07-11e7-93c8-49c586cfb255.PNG)
 
-
+As we can see, node 2 still got the longest valid chain, including our new mined block.
 
 ## Sources
 
