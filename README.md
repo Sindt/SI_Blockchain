@@ -104,7 +104,8 @@ To make sure, node 2 still got the longest valid chain we make another resovle r
 
 Request: http://localhost:10007/nodes/resolve
 
-![resolved2](https://user-images.githubusercontent.com/11289686/35145280-8686ea24-fd07-11e7-93c8-49c586cfb255.PNG)
+![resolved2](https://user-images.githubusercontent.com/11289686/35145392-f0592610-fd07-11e7-9719-6931c780dbc2.PNG)
+
 
 As we can see, node 2 still got the longest valid chain, including our new mined block.
 
